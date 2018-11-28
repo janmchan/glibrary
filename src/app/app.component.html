@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Auth0 - Angular </a>
+        
+        <form class="form-inline">
+          <a class="navbar-brand" href="#">{{auth.getEmail()}}</a>
+          <button class="btn btn-primary my-2 my-sm-0 mr-2"
+            routerLink="/" type="button">
+              Home
+          </button>
+          
+          <button id="qsLoginBtn"
+            class="btn btn-primary my-2 my-sm-0"
+            *ngIf="!auth.isAuthenticated()"
+            (click)="auth.login()" type="button">
+              Log In
+          </button>
+  
+          <button id="qsLogoutBtn"
+            class="btn btn-primary my-2 my-sm-0"
+            *ngIf="auth.isAuthenticated()"
+            (click)="auth.logout()" type="button">
+              Log Out
+          </button>
+          
+        </form>
+    </div>
+  </nav>
+  
+  <main role="main" class="container">
+      <br/>
+    <router-outlet></router-outlet>
+      
+  </main>
+<!--The content below is only a placeholder and can be replaced.-->
+

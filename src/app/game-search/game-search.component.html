@@ -1,0 +1,13 @@
+<div id="search-component">
+  <input #searchBox id="search-box" class="form-control ds-input" placeholder="Search..." (keyup)="search(searchBox.value)" />
+  <!--https://codeburst.io/display-a-table-using-components-with-angular-4-f13f0971666d-->
+  <table>
+      <!--tr>
+          <th *ngFor="let c of columns">{{c}}</th>
+      </tr-->
+      <tr *ngFor="let game of games$ | async">
+       <td>{{game.name}}</td>
+       <td><div *ngIf="game.cover" ><img src="{{game.cover.url}}"/></div></td>
+      </tr>
+    </table>
+</div>
